@@ -568,53 +568,107 @@
 
 
 
+
 <section id="agenda">
 
   <style>
+    #agenda {
+      font-size: 14px;
+    }
+
     #agenda .agenda-table-wrapper {
       width: 100%;
       overflow-x: auto;
+      margin-bottom: 25px;
     }
 
     #agenda table {
       width: 100%;
       font-size: 14px;
-      table-layout: auto;
       border-collapse: collapse;
+      table-layout: auto;
     }
 
     #agenda table th,
     #agenda table td {
-      white-space: nowrap !important;
-      padding: 8px 12px;
-      vertical-align: middle;
-      overflow-wrap: normal;
-      word-break: normal;
+      padding: 10px 12px;
+      vertical-align: top;
+      text-align: left;
     }
 
-    #agenda table th:first-child,
-    #agenda table td:first-child:not([colspan]) {
-      width: 130px;
-      min-width: 130px;
+    #agenda .time-col {
+      width: 125px;
+      min-width: 125px;
+      white-space: nowrap;
     }
 
     #agenda .session-header {
-      background-color: #eef;
+      background-color: #eeeeff;
       font-weight: bold;
+      font-size: 15px;
+      padding: 10px 12px;
     }
 
     #agenda .session-divider {
       border-top: 2px solid #999;
       padding: 0;
-      height: 4px;
+      height: 5px;
     }
 
-    #agenda .poster-ids {
-      background-color: #f8f8f8;
-      font-size: 12px;
+    #agenda .paper-row td {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    #agenda .paper-id {
+      color: #174a8b;
       font-weight: bold;
-      line-height: 1.8;
-      white-space: nowrap !important;
+    }
+
+    #agenda .paper-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #222;
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+
+    #agenda .paper-authors {
+      font-size: 12px;
+      font-weight: normal;
+      color: #666;
+      line-height: 1.6;
+      margin-top: 3px;
+      white-space: nowrap;
+    }
+
+    #agenda .poster-id {
+      color: #174a8b;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    #agenda .poster-summary {
+      background-color: #f4f6fa;
+      font-weight: bold;
+    }
+
+    #agenda .poster-row td {
+      border-bottom: 1px solid #e5e7eb;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    #agenda .poster-row:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    #agenda .keynote-speaker {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    #agenda .day-heading {
+      margin-top: 35px;
     }
   </style>
 
@@ -632,7 +686,7 @@
     <table>
       <thead>
         <tr>
-          <th>Time</th>
+          <th class="time-col">Time</th>
           <th>Session</th>
         </tr>
       </thead>
@@ -642,12 +696,12 @@
         <!-- Opening -->
 
         <tr>
-          <td>9:00 ~ 9:15</td>
+          <td class="time-col">9:00 ~ 9:15</td>
           <td>Poster Setup</td>
         </tr>
 
         <tr>
-          <td>9:15 ~ 9:20</td>
+          <td class="time-col">9:15 ~ 9:20</td>
           <td>Opening Remarks (Workshop Organizers)</td>
         </tr>
 
@@ -657,18 +711,32 @@
 
         <tr>
           <td colspan="2" class="session-header">
-            Oral Paper Presentations -- Session 1
+            Oral Paper Presentations — Session 1
           </td>
         </tr>
 
-        <tr>
-          <td>9:20 ~ 9:40</td>
-          <td>S51213 — Connecting Histologic Tumor–Immune Architecture and Spatial Transcriptomic Pathway Activity in Colorectal Cancer</td>
+        <tr class="paper-row">
+          <td class="time-col">9:20 ~ 9:40</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51213</span> — Connecting Histologic Tumor–Immune Architecture and Spatial Transcriptomic Pathway Activity in Colorectal Cancer.
+            </div>
+            <div class="paper-authors">
+              Srihith Chennareddy, Sejuti Majumder, Khush Mehta, Prateek Prasanna, and Alisa Yurovsky
+            </div>
+          </td>
         </tr>
 
-        <tr>
-          <td>9:40 ~ 10:00</td>
-          <td>S51243 — Shared-Shape Conformal Prediction for Subgroup-Valid Multivariate Regions in Connectome Prediction</td>
+        <tr class="paper-row">
+          <td class="time-col">9:40 ~ 10:00</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51243</span> — Shared-Shape Conformal Prediction for Subgroup-Valid Multivariate Regions in Connectome Prediction
+            </div>
+            <div class="paper-authors">
+              Kai Ye, Yingying Zhang, Lei Guo, Yanfu Zhang, Heng Huang, Paul Thompson, Haoteng Tang, and Liang Zhan
+            </div>
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -680,7 +748,7 @@
         </tr>
 
         <tr>
-          <td>10:00 ~ 10:20</td>
+          <td class="time-col">10:00 ~ 10:20</td>
           <td>Coffee Break</td>
         </tr>
 
@@ -693,8 +761,10 @@
         </tr>
 
         <tr>
-          <td>10:20 ~ 11:05</td>
-          <td>Dr. Alisa Yurovsky (Stony Brook University)</td>
+          <td class="time-col">10:20 ~ 11:05</td>
+          <td class="keynote-speaker">
+            Dr. Alisa Yurovsky (Stony Brook University)
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -703,23 +773,44 @@
 
         <tr>
           <td colspan="2" class="session-header">
-            Oral Paper Presentations -- Session 2
+            Oral Paper Presentations — Session 2
           </td>
         </tr>
 
-        <tr>
-          <td>11:05 ~ 11:25</td>
-          <td>S51228 — Internally Significant Computed Tomography Radiomics That Fails External Validation in Lung Cancer Histology</td>
+        <tr class="paper-row">
+          <td class="time-col">11:05 ~ 11:25</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51228</span> — Internally Significant Computed Tomography Radiomics That Fails External Validation in Lung Cancer Histology
+            </div>
+            <div class="paper-authors">
+              Adil Karim, Amine Berquedich, El Habib Benlahmer, Sanaa El Filali, and Ahmed Zellou
+            </div>
+          </td>
         </tr>
 
-        <tr>
-          <td>11:25 ~ 11:45</td>
-          <td>B2231 — Novel Complexity Measures for Voice-Based Parkinson's Disease Detection</td>
+        <tr class="paper-row">
+          <td class="time-col">11:25 ~ 11:45</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">B2231</span> — Novel Complexity Measures for Voice-Based Parkinson's Disease Detection
+            </div>
+            <div class="paper-authors">
+              Kiana Avestimehr and Oleg Gleizer
+            </div>
+          </td>
         </tr>
 
-        <tr>
-          <td>11:45 ~ 12:05</td>
-          <td>S51242 — Remove or Isolate? A Compact Site-Isolating Framework for Cross-Site Connectome Diagnosis</td>
+        <tr class="paper-row">
+          <td class="time-col">11:45 ~ 12:05</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51242</span> — Remove or Isolate? A Compact Site-Isolating Framework for Cross-Site Connectome Diagnosis
+            </div>
+            <div class="paper-authors">
+              Siyuan Dai, Kun Zhao, Zhusuyi Chen, Levin Liu, Paul Thompson, Heng Huang, Haoteng Tang, and Liang Zhan
+            </div>
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -731,26 +822,239 @@
         </tr>
 
         <tr>
-          <td>12:05 ~ 13:30</td>
+          <td class="time-col">12:05 ~ 13:30</td>
           <td>Lunch Break</td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
 
-        <!-- Poster Session 1 -->
+        <!-- ================= POSTER SESSION 1 ================= -->
 
         <tr>
-          <td colspan="2" class="session-header">Poster Session 1</td>
+          <td colspan="2" class="session-header">
+            Poster Session 1 — 18 Papers
+          </td>
         </tr>
 
-        <tr>
-          <td>13:30 ~ 14:45</td>
-          <td>Poster Session 1 (18 Papers)</td>
+        <tr class="poster-summary">
+          <td class="time-col">13:30 ~ 14:45</td>
+          <td>Poster Presentations</td>
         </tr>
 
-        <tr>
-          <td><strong>Paper IDs</strong></td>
-          <td class="poster-ids">S51201, S51206, S51208, S51215, S51218, S51220, S51222, S51225, S51227, S51231, S51233, S51237, S51239, B381, B471, B783, B1996, B2290</td>
+        <tr class="poster-row">
+          <td class="poster-id">S51201</td>
+          <td>
+            <div class="paper-title">
+              Exploring Post-Training Alignment of Small Language Models for Biomedical Data-to-Text Generation: A Case Study of Medication Leaflet
+            </div>
+            <div class="paper-authors">
+              Xi Yang, Guodong Liu, Chuqin Li, Fan Wu, Ergin Soysal, Min Jiang, Xing He, Jiang Bian, Yi Guo, Shams Zaman, Thomas Fuchs, and Yonghui Wu
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51206</td>
+          <td>
+            <div class="paper-title">
+              Towards Explainable Sleep Stage Classification using Single-Channel Electroencephalogram
+            </div>
+            <div class="paper-authors">
+              GURINDER KAUR SANDHU, Jude Koenig, Ankita Shukla, and Shruti Kshirsagar
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51208</td>
+          <td>
+            <div class="paper-title">
+              Parameter Inference in Alzheimer’s Disease Biomarker Dynamics Using Systems-Biology-Informed Neural Networks
+            </div>
+            <div class="paper-authors">
+              Adarsh Ramamurthy and Yixiang Deng
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51215</td>
+          <td>
+            <div class="paper-title">
+              Generalize Then Personalize: Wearable-Based Heart Rate Forecasting Under Scarce Ruck-March Data
+            </div>
+            <div class="paper-authors">
+              Muntaqim Ahmed Raju, Ruizhe Ma, John W. Ramsay, and David J. Cornell
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51218</td>
+          <td>
+            <div class="paper-title">
+              GLAD-MIL:Global-Local Aggregation with Dual-Granularity Evidence for Whole-Slide Image Classification
+            </div>
+            <div class="paper-authors">
+              Liang Cheng, Jian Qin, Lanlan Kang, Zhuo Wang, Xu Fan, and Mengya Sun
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51220</td>
+          <td>
+            <div class="paper-title">
+              Graph-Filtered Network Diffusion Reveals Structure-Function Coupling Signatures of Cognitive Impairment
+            </div>
+            <div class="paper-authors">
+              Augustin Zhan, Siyuan Dai, Haoteng Tang, and Lei Guo
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51222</td>
+          <td>
+            <div class="paper-title">
+              Target-Aware Auditing of Spatial Shortcuts and Attribution Faithfulness in an fMRI ICA Quality-Control Classifier
+            </div>
+            <div class="paper-authors">
+              tianye chen and zhiyu wan
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51225</td>
+          <td>
+            <div class="paper-title">
+              PortionAnchor: Learning Food Quantities for Vision-Based Dietary Energy Estimation
+            </div>
+            <div class="paper-authors">
+              Wenbo Deng, Suheng Yao, Huimin Cheng, and Xiaowei Yu
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51227</td>
+          <td>
+            <div class="paper-title">
+              Source-Trained Correction with Explicit Neighboring-Beat Context for Supraventricular Ectopic Beat Detection: Patient-Level Cross-Database Evaluation
+            </div>
+            <div class="paper-authors">
+              JinKook Kim
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51231</td>
+          <td>
+            <div class="paper-title">
+              What Protects and Who Benefits? Precision Prevention of Adolescent Alcohol Use
+            </div>
+            <div class="paper-authors">
+              Yingying Zhang, Kun Zhao, Siyuan Dai, Yang Du, Qi Huang, Frances Wang, Liang Zhan, and Haoteng Tang
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51233</td>
+          <td>
+            <div class="paper-title">
+              Cross-Suite Robustness of Fine-Tuning Design Choices in a Small Vision-Language-Action Model
+            </div>
+            <div class="paper-authors">
+              Sixiong You, Guodong Liu, Jie Xue, Karan Pandya, and Sung Jun Bae
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51237</td>
+          <td>
+            <div class="paper-title">
+              Towards Robust Automated Mouse Scratching Behavior Detection for Itch Research
+            </div>
+            <div class="paper-authors">
+              Shu Yang, Anyu Pan, Hyowon Shin, Hongzhuo Chen, Zhao Zhang, Azim Shad, William Huang, Yang Liu, Wesley Liu, Helen Luo, Chentianye Xu, Jiong Chen, Min Xu, Wenqin Luo, Huasheng Yu, and Li Shen
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51239</td>
+          <td>
+            <div class="paper-title">
+              Exploring Recurrent-Depth Language Models for Multitask Clinical Text Processing
+            </div>
+            <div class="paper-authors">
+              Xi Yang, Guodong Liu, Cheng Peng, Kaleb Smith, Yingying Zhang, Xing He, Yi Guo, Jiang Bian, Haoteng Tang, and Yonghui Wu
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B381</td>
+          <td>
+            <div class="paper-title">
+              DACTG-BERT: Masked Multimodal Pretraining and Label-Efficient Conditional Domain Transfer for Cross-Stage CTG Analysis
+            </div>
+            <div class="paper-authors">
+              Lingshuang Tang, Xiner Wang, Guiqing Liu, Qinqun Chen, and Hang Wei
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B471</td>
+          <td>
+            <div class="paper-title">
+              Single-Condition Noise-Ceiling Normalization Manufactures Cortical-Hierarchy Effects That Vanish on Raw Correlation
+            </div>
+            <div class="paper-authors">
+              Elsun Nabatov
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B783</td>
+          <td>
+            <div class="paper-title">
+              AucMOE: Learnable Auction Router Guided Hybrid Expert Model for Fetal Heart Rate Monitoring
+            </div>
+            <div class="paper-authors">
+              Kexiang Wang, Qian Chen, Min Fang, Yangyi Lin, Yujun Feng, Tingting Chen, and Jianqiang Li
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B1996</td>
+          <td>
+            <div class="paper-title">
+              BeatBERT: A Pre-training Framework for ECG Representation in Discrete Space
+            </div>
+            <div class="paper-authors">
+              Chengxin Zhong, Xunde Dong, Xiuling Liu Liu, and Fei Hu
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B2290</td>
+          <td>
+            <div class="paper-title">
+              A Wearable Cardio-Patch with CVD Arrhythmia Type Detection using Interpretable Features
+            </div>
+            <div class="paper-authors">
+              Syed Muhammad Abdul Rehman, Nadeem Ahmad Khan, and Muhammad Awais Bin Altaf
+            </div>
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -762,8 +1066,10 @@
         </tr>
 
         <tr>
-          <td>14:45 ~ 15:15</td>
-          <td>Dr. Hyeokhyen Kwon (Emory University / Georgia Tech)</td>
+          <td class="time-col">14:45 ~ 15:15</td>
+          <td class="keynote-speaker">
+            Dr. Hyeokhyen Kwon (Emory University / Georgia Tech)
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -775,26 +1081,227 @@
         </tr>
 
         <tr>
-          <td>15:15 ~ 15:50</td>
+          <td class="time-col">15:15 ~ 15:50</td>
           <td>Coffee Break</td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
 
-        <!-- Poster Session 2 -->
+        <!-- ================= POSTER SESSION 2 ================= -->
 
         <tr>
-          <td colspan="2" class="session-header">Poster Session 2</td>
+          <td colspan="2" class="session-header">
+            Poster Session 2 — 17 Papers
+          </td>
         </tr>
 
-        <tr>
-          <td>15:50 ~ 17:30</td>
-          <td>Poster Session 2 (17 Papers)</td>
+        <tr class="poster-summary">
+          <td class="time-col">15:50 ~ 17:30</td>
+          <td>Poster Presentations</td>
         </tr>
 
-        <tr>
-          <td><strong>Paper IDs</strong></td>
-          <td class="poster-ids">S51203, S51207, S51209, S51216, S51219, S51221, S51224, S51226, S51229, S51232, S51234, S51238, S51241, B431, B478, B1637, B2129</td>
+        <tr class="poster-row">
+          <td class="poster-id">S51203</td>
+          <td>
+            <div class="paper-title">
+              Population-Specific Causal Functional Subnetwork Modeling for Brain Disease Analysis
+            </div>
+            <div class="paper-authors">
+              Alissen Moreno, Yingying Zhang, Qi Huang, Fabian Vazquez, Jose Nunez, Erik Enriquez, Dongchul Kim, Kaixiong Zhou, Hongchang Gao, Pengfei Gu, Liang Zhan, and Haoteng Tang
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51207</td>
+          <td>
+            <div class="paper-title">
+              ECG-Based Mortality and Phenotype Prediction Across Deep Learning Architectures
+            </div>
+            <div class="paper-authors">
+              Zhongjie Wu, Nikkie Hooman, Mehak Gupta, and Eric Larson
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51209</td>
+          <td>
+            <div class="paper-title">
+              Temporal Fusion Transformers for Long-Term Diagnostic Trajectories Prediction from EHR Data
+            </div>
+            <div class="paper-authors">
+              Anjali Rodrigo and Rupika Wijesinghe
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51216</td>
+          <td>
+            <div class="paper-title">
+              From Whole-Brain Edges to Network-Level Summaries: Predicting Placebo Analgesic Response in Knee Osteoarthritis Patients from Resting-State fMRI
+            </div>
+            <div class="paper-authors">
+              Tonushree Dutta, Brian Lim, and Sourav Kumar Ghosh
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51219</td>
+          <td>
+            <div class="paper-title">
+              SREA-MIL State–Relation Evidence Aggregation for Cervical Cytology Whole-Slide Classification
+            </div>
+            <div class="paper-authors">
+              Liang Cheng, Jian Qin, Lanlan Kang, Wenjun Xu, Xudong Hong, and Zhuo Wang
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51221</td>
+          <td>
+            <div class="paper-title">
+              Cross-Bathroom Feasibility of mmWave Radar Point-Cloud Fall Recognition
+            </div>
+            <div class="paper-authors">
+              Zixian Zhuang, Alvin Shih, and Jiann-Shu Lee
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51224</td>
+          <td>
+            <div class="paper-title">
+              A Directional Benchmark for Cross-Dataset Generalization in 12-Lead ECG Classification: Label Harmonization and Descriptive Shift Indicators
+            </div>
+            <div class="paper-authors">
+              Siddharth Vishwanath, Tanush Appapogu, Sydney Ma, Leslie Chung, and Kiran Nijjer
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51226</td>
+          <td>
+            <div class="paper-title">
+              ARIPA: Agentic Reasoning for Image-based Pathology Analysis
+            </div>
+            <div class="paper-authors">
+              Qiangqiang Gu, Rong Xia, Rose Doerfler, Jie Chen, Arjun Singh, Sahussapont Sirintrapun, Aatur Singhi, Ioannis Zervantonakis, Brian Isett, and Riyue Bao
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51229</td>
+          <td>
+            <div class="paper-title">
+              Toward Pulmonary Function Test to Chest Computed Tomography Image Reconstruction by Diffusion Model-based Cross-Modal Generation
+            </div>
+            <div class="paper-authors">
+              Dayton McCall, Jonas Swope, Emmanuel Yangue, Ethan O'Connor, Yu Feng, and Chenang Liu
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51232</td>
+          <td>
+            <div class="paper-title">
+              When Models Work Together: Evaluating Two-Stage Sleep Staging
+            </div>
+            <div class="paper-authors">
+              Yukai Song, Yangfan Deng, Jijun Yin, Zhi-Hong Mao, and Jingtong Hu
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51234</td>
+          <td>
+            <div class="paper-title">
+              GENEVO: A Simulation Framework for Bayesian Optimization of Osteoporosis Biosensor Design
+            </div>
+            <div class="paper-authors">
+              Akshit Manikanta Erukulla and Sri Lasya Erukulla
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51238</td>
+          <td>
+            <div class="paper-title">
+              Predicting Treatment Response in Diabetic Macular Edema Using Multimodal OCT and IR Imaging
+            </div>
+            <div class="paper-authors">
+              Haoling Wang, Zhuodiao Kuang, Yifei Yuan, Liang Zhan, and Ying Ding
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">S51241</td>
+          <td>
+            <div class="paper-title">
+              Shallow Alignment Through Time: Temporal Shifts in Visual Decoding
+            </div>
+            <div class="paper-authors">
+              Yang Du, Yonghao Song, Siyuan Dai, Yingying Zhang, Paul Thompson, Haoteng Tang, and Liang Zhan
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B431</td>
+          <td>
+            <div class="paper-title">
+              Multivariate Forecasting of Ambulatory Blood Pressure Using Long Short-Term Memory and Temporal Fusion Transformer Models
+            </div>
+            <div class="paper-authors">
+              Sebastian Sebastian, Yifeng Gao, Roberto Arias, John Knight, Gladys Maestre, and Kristina Vatcheva
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B478</td>
+          <td>
+            <div class="paper-title">
+              BridgeNet: A Synergistic Dual-Encoder with Cross-Attention for Efficient Multi-Granularity 3D Multi-Organ Segmentation
+            </div>
+            <div class="paper-authors">
+              Jiatong Li, Dianrong Du, Jiaxin Li, Jiahao Zhu, Hengfei Cui, and Yong Xia
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B1637</td>
+          <td>
+            <div class="paper-title">
+              Train-Free External Evidence Memory for Refreshable and Auditable ECG Classification with Frozen ECG--Text Alignment Models
+            </div>
+            <div class="paper-authors">
+              Wenda liu, Fabien Picarougne, Guillaume Raschia, and Vincent Ricordel
+            </div>
+          </td>
+        </tr>
+
+        <tr class="poster-row">
+          <td class="poster-id">B2129</td>
+          <td>
+            <div class="paper-title">
+              BioShoulder: A Large-Scale Biomechanical Dataset for Shoulder Muscle Activations
+            </div>
+            <div class="paper-authors">
+              Xiangao Meng, Tao Wang, ZeMing Huang, Zhipei Huang, Dianying Zhang, Yanhua Wang, Yujie Wang, and Fei Qin
+            </div>
+          </td>
         </tr>
 
       </tbody>
@@ -803,14 +1310,17 @@
 
   <!-- ================= DAY 2 ================= -->
 
-  <h3 style="margin-top: 35px;">Day 2 — Wednesday, December 2, 2026</h3>
+  <h3 class="day-heading">
+    Day 2 — Wednesday, December 2, 2026
+  </h3>
+
   <p><strong>Time:</strong> 10:30 AM – 5:30 PM</p>
 
   <div class="agenda-table-wrapper">
     <table>
       <thead>
         <tr>
-          <th>Time</th>
+          <th class="time-col">Time</th>
           <th>Session</th>
         </tr>
       </thead>
@@ -824,8 +1334,10 @@
         </tr>
 
         <tr>
-          <td>10:30 ~ 11:15</td>
-          <td>Dr. Ping Wang (Stevens Institute of Technology)</td>
+          <td class="time-col">10:30 ~ 11:15</td>
+          <td class="keynote-speaker">
+            Dr. Ping Wang (Stevens Institute of Technology)
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -834,18 +1346,32 @@
 
         <tr>
           <td colspan="2" class="session-header">
-            Oral Paper Presentations -- Session 3
+            Oral Paper Presentations — Session 3
           </td>
         </tr>
 
-        <tr>
-          <td>11:15 ~ 11:35</td>
-          <td>S51211 — A Heterogeneous Multiview Framework for Depression Screening from Wrist Actigraphy</td>
+        <tr class="paper-row">
+          <td class="time-col">11:15 ~ 11:35</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51211</span> — A Heterogeneous Multiview Framework for Depression Screening from Wrist Actigraphy
+            </div>
+            <div class="paper-authors">
+              Olivia Zhang
+            </div>
+          </td>
         </tr>
 
-        <tr>
-          <td>11:35 ~ 11:55</td>
-          <td>S51230 — Multimodal Temporal Fusion for Sleep Stage Classification</td>
+        <tr class="paper-row">
+          <td class="time-col">11:35 ~ 11:55</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51230</span> — Multimodal Temporal Fusion for Sleep Stage Classification
+            </div>
+            <div class="paper-authors">
+              Jude Koenig, Shruti Kshirsagar, and Ankita Shukla
+            </div>
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -857,7 +1383,7 @@
         </tr>
 
         <tr>
-          <td>12:05 ~ 13:30</td>
+          <td class="time-col">12:05 ~ 13:30</td>
           <td>Lunch Break</td>
         </tr>
 
@@ -870,8 +1396,10 @@
         </tr>
 
         <tr>
-          <td>13:30 ~ 14:15</td>
-          <td>Dr. Xiaowei Yu (Missouri University of Science and Technology)</td>
+          <td class="time-col">13:30 ~ 14:15</td>
+          <td class="keynote-speaker">
+            Dr. Xiaowei Yu (Missouri University of Science and Technology)
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -883,8 +1411,10 @@
         </tr>
 
         <tr>
-          <td>14:15 ~ 15:30</td>
-          <td>Dr. Zhiqian Chen (Rochester Institute of Technology)</td>
+          <td class="time-col">14:15 ~ 15:30</td>
+          <td class="keynote-speaker">
+            Dr. Zhiqian Chen (Rochester Institute of Technology)
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -896,7 +1426,7 @@
         </tr>
 
         <tr>
-          <td>15:30 ~ 15:50</td>
+          <td class="time-col">15:30 ~ 15:50</td>
           <td>Coffee Break</td>
         </tr>
 
@@ -909,8 +1439,10 @@
         </tr>
 
         <tr>
-          <td>15:50 ~ 16:35</td>
-          <td>Dr. Ziming Liu (University of Oklahoma)</td>
+          <td class="time-col">15:50 ~ 16:35</td>
+          <td class="keynote-speaker">
+            Dr. Ziming Liu (University of Oklahoma)
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -919,18 +1451,32 @@
 
         <tr>
           <td colspan="2" class="session-header">
-            Oral Paper Presentations -- Session 4
+            Oral Paper Presentations — Session 4
           </td>
         </tr>
 
-        <tr>
-          <td>16:35 ~ 16:55</td>
-          <td>S51236 — Can Multimodal LLMs Understand 12-lead ECG? A Cardiologist-annotated Benchmark</td>
+        <tr class="paper-row">
+          <td class="time-col">16:35 ~ 16:55</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51236</span> — Can Multimodal LLMs Understand 12-lead ECG? A Cardiologist-annotated Benchmark
+            </div>
+            <div class="paper-authors">
+              Alberto Castromolina, Alexandra Martinez, Guillermo Guerrero, Gaukhar Nurbek, Charles Galperin, Yifeng Gao, Guillermo Salinas, and Li Zhang
+            </div>
+          </td>
         </tr>
 
-        <tr>
-          <td>16:55 ~ 17:15</td>
-          <td>S51240 — Beyond Majority Voting: Calibrated Self-Consistency for Radiology Report Generation</td>
+        <tr class="paper-row">
+          <td class="time-col">16:55 ~ 17:15</td>
+          <td>
+            <div class="paper-title">
+              <span class="paper-id">S51240</span> — Beyond Majority Voting: Calibrated Self-Consistency for Radiology Report Generation
+            </div>
+            <div class="paper-authors">
+              Kun Zhao, Yingying Zhang, Yang Du, Haoteng Tang, Heng Huang, and Liang Zhan
+            </div>
+          </td>
         </tr>
 
         <tr><td colspan="2" class="session-divider"></td></tr>
@@ -938,7 +1484,7 @@
         <!-- Closing Remarks -->
 
         <tr>
-          <td>17:15 ~ 17:30</td>
+          <td class="time-col">17:15 ~ 17:30</td>
           <td>Closing Remarks (Workshop Organizers)</td>
         </tr>
 
@@ -947,6 +1493,7 @@
   </div>
 
 </section>
+
 
 
 
